@@ -1,6 +1,6 @@
 version: "3.9"
 services:
-  basic-docker-web_1:
+  basic-docker-web:
     build: .
     ports: 
     - "3000:3000"
