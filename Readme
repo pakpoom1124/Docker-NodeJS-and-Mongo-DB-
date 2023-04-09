@@ -1,0 +1,32 @@
+### ติดตั้ง Node เพื่อให้ได้ JSON Package ด้วยคำสั่ง
+npm init -y 
+### ติดตั้ง fastify เพื่อใช้สำหรับเก็บ Log ด้วยคำสั่ง
+npm i -S fastify 
+### -S หมายถึงคำสั่ง Save
+### สร้างไฟล์ index.js และสร้างคำสั่ง เพื่อเรียกใช้งาน port ด้วยคำสั่ง node index.js 
+### ไปเช็คที่ browser และพิมพ์คำสั่ง localhost:3000 
+### สร้าง ENV เพิ่มที่ไฟล์ index.js 
+### เริ่มทำการสร้าง Dockerfile ตามรายละเอียดใน Dockerfile
+### ทำการ build docker ขึ้นมาก่อน ด้วยคำสั่งด้านล่าง โดยตั้งชื่อเป็น basicdocker101
+docker build . -t basicdocker101
+### เมื่อสร้างหรือ build docker เสร็จแล้ว เราสามารถใช้คำส่ังเพื่อเรียกดูว่าgikสร้าง docker images ได้เรียบร้อยแล้วตามคำสั่งด้านล่าง 
+docker images
+### สั่งรัน docker ด้วยคำสั่ง ด้านล่าง 
+### -d หมายถึง run background และ -p หมายถึง port 
+### 3000:3000 3000 ข้างหน้า หมายถึง external 
+docker run -d -p 3000:3000 --name basicdocker101-container basicdocker101
+### เมื่อเราสร้าง docker เสร็็จแล้ว เราสามารถเรียกดูได้จากคำสั่งด้านล่าง 
+docker ps 
+### จากนั้นไปดูที่ web browser แล้วลอง refresh ดู ในต่วนของ Env จะต้องเปลี่ยนเป็น production 
+### หากเราจะทำการสั่ง stop/start docker ทำได้โดยใช้คำสั่งด้านล่าง
+docker stop  
+docker start
+### หากต้องการ จะลบ docker แต่ไม่สามารถลบได้ ต้องทำการ stop ก่อน หรืออาจจะใช้คำสั่งด้านล่างได้เลย 
+docker rm -f basicdocker101-container 
+### ในกรณีที่ใน project มี services อื่นๆมากกว่า 1 services เราจะทำการสร้างไฟล์ docker-compose.yml ขึ้นมา
+### เริ่มต้นด้วยการสร้างไฟล์ docker-compose.yml ด้วยการใส่ version, services and build หากเราใช้ . จะเป็นการสร้างไฟล์ที่ local และสุดท้ายที่สำคัญมากคือการใส่ ports จะต้องมีการ ใส่เครื่องหมาย - "ใส่เลข_port:.ใส่เลข_port" และต้องขึ้นบรรทัดใหม่ด้วย 
+### เมื่อสร้างเรียบร้อยสามารใช้คำสั่ง docker-compose up/down ได้ตามคำสั่งด้านล่าง 
+docker-compose up
+
+
+
