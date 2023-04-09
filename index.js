@@ -9,7 +9,8 @@ const app = fastify({
 app.get('/', async() =>{
     return{
         status: 'OK',
-        nodeEnv
+        nodeEnv,
+        Console.log('ตอนนี้รัน ผ่าน Docker แล้วนะ');
     }
 })
 
