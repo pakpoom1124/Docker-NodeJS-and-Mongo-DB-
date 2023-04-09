@@ -27,6 +27,8 @@ docker rm -f basicdocker101-container
 ### เริ่มต้นด้วยการสร้างไฟล์ docker-compose.yml ด้วยการใส่ version, services and build หากเราใช้ . จะเป็นการสร้างไฟล์ที่ local และสุดท้ายที่สำคัญมากคือการใส่ ports จะต้องมีการ ใส่เครื่องหมาย - "ใส่เลข_port:.ใส่เลข_port" และต้องขึ้นบรรทัดใหม่ด้วย 
 ### เมื่อสร้างเรียบร้อยสามารใช้คำสั่ง docker-compose up/down ได้ตามคำสั่งด้านล่าง 
 docker-compose up
+docker-compose up -d 
+### ทำการ add services mongo DB โดยเพิ่มเข้าไปที่ ไฟล์ docker-compose.yml และเมื่อเพิ่มเรียบร้อยแล้ว ก็ให้ลองรัน docker-compose up -d (-d เป็นการรันแบบ background) หากมี ports ชน ก็ให้ทำการแก้ไข port 
 
 
 
