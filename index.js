@@ -9,7 +9,9 @@ const app = fastify({
 app.get('/', async() =>{
     return{
         status: 'OK',
-        nodeEnv
+        status: 'run on node',
+        nodeEnv,
+        
     }
 })
 
